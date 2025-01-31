@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyslexia Detection</title>
+
+    <!-- Link to External Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <div class="hero">
+        <h1 class="hero-heading">Dyslexia Detection</h1>
+        <p class="instructions">Upload an image for dyslexia detection. Follow the instructions below:</p>
+        <div class="instruction-box">
+            <ol>
+                <li>Click the "Upload Image" button to upload an image.</li>
+                <li>Click "Detect Dyslexia" to start the analysis.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <div class="card-info">
+                <h2>Upload Your Image</h2>
+                <button id="uploadButton">Upload Image</button>
+                <input type="file" id="upload" style="display: none;">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-info">
+                <h2>Detect Dyslexia</h2>
+                <button id="detectButton">Detect Dyslexia</button>
+                <div id="resultBox" class="result-box" style="display: none;">
+                    <p id="resultText">Result will appear here.</p>
+                </div>
+                <div id="loader" class="loader" style="display: none;">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to External JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

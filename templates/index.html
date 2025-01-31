@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyslexia Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="icon" href="static/logo2.jpg" type="image/jpg">
+</head>
+<body>
+    <div class="content">
+        <div class="heading">
+            <span class="highlight" id="mainHeading"></span> 
+        </div>
+        <div class="sub-content" id="description">
+            
+        </div>
+    </div>
+    
+    <div class="hero">
+        <div class="hero-heading">How to use?</div>
+        <div class="instructions">
+            <ol>
+                <li>Take a plain white paper.</li>
+                <li>Write the text given in the box below.</li>
+                <li>Click a photo of your writing.</li>
+                <li>Correctly align the photo and upload it.</li>
+            </ol>
+        </div>
+        <div class="instruction-box">
+            <p>
+                "Jack quickly enjoyed fixing the vibrant zebra's puzzle while listening to an old saxophone, making a unique quiz for the charming fox with an exotic mix of melodies."
+            </p>
+        </div>
+    
+    </div>
+    
+    <!-- <div class="card">
+        <div class="card-info">
+            <div class="header">
+                <h1>Dyslexia Detection</h1>
+            </div>
+            <div class="button-container">
+                <button id="uploadButton">📤 Upload Image</button>
+                <button id="detectButton">🔍 Find Dyslexia</button>
+            </div>
+            <div class="result-box" id="resultBox">
+                <p id="resultText">Result will appear here...</p>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="content">
+      <div class="card">
+          <div class="card-info">
+            <div class="header">
+              <h1>Dyslexia Detection</h1>
+          </div>
+              <button id="uploadButton">📤 Upload Image</button>
+              <input type="file" id="upload" style="display: none; ">
+              <button id="detectButton">🔍 Find Dyslexia</button>
+              <button><a href="/download-report" class="btn btn-primary" role="button">Download Report</a></button>
+
+              <div id="resultBox" class="result-box" style="display: none;">
+                  <p id="resultText">Result will appear here.</p>
+              </div>
+              <div id="loader" class="loader" style="display: none;">
+                  <p>Loading...</p>
+              </div>
+
+
+          </div>
+      </div>
+
+ </div>
+
+
+
+
+    <div class="advantage-section">
+      <div class="advantage-heading"><h2>Advantages</h2></div>
+      <div class="advantage-card-container">
+
+        <!-- card 1 -->
+<div class="advantage-card">
+  <div class="advantage-content">
+    <div class="advantage-back">
+      <div class="advantage-back-content">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" height="50px" fill="#ffffff">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        
+        <strong>Ai empowered</strong>
+      </div>
+    </div>
+    <div class="advantage-front">
+      
+      <div class="advantage-img">
+        <div class="advantage-circle">
+        </div>
+        <div class="advantage-circle" id="advantage-right">
+        </div>
+        <div class="advantage-circle" id="advantage-bottom">
+        </div>
+      </div>
+
+      <div class="advantage-front-content">
+      
+        <div class="advantage-description">
+          <div class="advantage-title">
+            <p class="advantage-title">
+              <strong>Ai model 90% Accurate</strong>
+            </p>
+            <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- card 2 -->
+<div class="advantage-card">
+  <div class="advantage-content">
+    <div class="advantage-back">
+      <div class="advantage-back-content">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" height="50px" fill="#ffffff">
+          <path d="M13 3L7 13h4v8l6-10h-4z"/>
+        </svg>
+        
+        
+        
+        <strong>Fast</strong>
+      </div>
+    </div>
+    <div class="advantage-front">
+      
+      <div class="advantage-img">
+        <div class="advantage-circle">
+        </div>
+        <div class="advantage-circle" id="advantage-right">
+        </div>
+        <div class="advantage-circle" id="advantage-bottom">
+        </div>
+      </div>
+
+      <div class="advantage-front-content">
+      
+        <div class="advantage-description">
+          <div class="advantage-title">
+            <p class="advantage-title">
+              <strong>Get report quickly </strong>
+            </p>
+            <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- card 3 -->
+
+<div class="advantage-card">
+  <div class="advantage-content">
+    <div class="advantage-back">
+      <div class="advantage-back-content">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" height="50px" fill="#ffffff">
+          <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+        </svg>
+        
+        
+        
+        <strong>Medicaly </strong>
+      </div>
+    </div>
+    <div class="advantage-front">
+      
+      <div class="advantage-img">
+        <div class="advantage-circle">
+        </div>
+        <div class="advantage-circle" id="advantage-right">
+        </div>
+        <div class="advantage-circle" id="advantage-bottom">
+        </div>
+      </div>
+
+      <div class="advantage-front-content">
+      
+        <div class="advantage-description">
+          <div class="advantage-title">
+            <p class="advantage-title">
+              <strong>Approved by Phycologist</strong>
+            </p>
+            <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+
+    </div>
+
+
+<footer class="footer">
+  <div class="footer-heading">About Us</div>
+  
+  <!-- Connection Section -->
+  <div class="connection">
+    <!-- First About Container -->
+    <div class="about-container">
+      <div class="tooltip">
+        <div class="profile">
+          <div class="user">
+            <div class="img">
+              <img src="" alt="">
+            </div>
+            <div class="details">
+              <div class="name">User</div>
+              <div class="username">@Aditya</div>
+            </div>
+          </div>
+          <div class="about">500+ Connections</div>
+        </div>
+      </div>
+      <div class="text">
+        <a class="icon" href="https://www.linkedin.com/in/aditya-shrivastava-24291424a/">
+          <div class="layer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fab fa-linkedin">
+              <svg viewBox="0 0 448 512" height="1em">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="text">Aditya</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Second About Container -->
+    <div class="about-container">
+      <div class="tooltip">
+        <div class="profile">
+          <div class="user">
+            <div class="img">UI</div>
+            <div class="details">
+              <div class="name">User</div>
+              <div class="username">@Baaqar</div>
+            </div>
+          </div>
+          <div class="about">500+ Connections</div>
+        </div>
+      </div>
+      <div class="text">
+        <a class="icon" href="https://freecodez.com/">
+          <div class="layer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fab fa-linkedin">
+              <svg viewBox="0 0 448 512" height="1em">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="text">Baaqar</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Third About Container -->
+    <div class="about-container">
+      <div class="tooltip">
+        <div class="profile">
+          <div class="user">
+            <div class="img">
+              <img src="" alt="">
+            </div>
+            <div class="details">
+              <div class="name">User</div>
+              <div class="username">@Dhruv</div>
+            </div>
+          </div>
+          <div class="about">500+ Connections</div>
+        </div>
+      </div>
+      <div class="text">
+        <a class="icon" href="https://www.linkedin.com/in/dhruv-jain-714434255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+          <div class="layer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fab fa-linkedin">
+              <svg viewBox="0 0 448 512" height="1em">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+          <div class="text">Dhruv</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="../static/js/script.js"></script>
+    <!-- <script src="{{ url_for('static', filename='js/script.js') }}"></script> -->
+</body>
+</html>
